@@ -1,0 +1,27 @@
+echo "# formulario" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/carlosgl2017/formulario.git
+git push -u origin master
+
+crear crud
+php artisan make:filament-resource Procedimiento --generate
+
+bajar
+docker-compose down
+#levantar
+docker-compose up -d
+
+Si hiciste cambios en el Dockerfile o en docker-compose.yml: Debes forzar una reconstrucción de las imágenes al levantar:
+docker-compose up -d --build
+#reiniciar
+docker-compose restart
+#logs
+docker-compose logs -f
+
+#ejecutar php artisan
+docker-compose exec app php artisan cache:clear
+docker-compose exec app php artisan optimize:clear
+

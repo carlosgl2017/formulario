@@ -1,0 +1,23 @@
+Table users{
+id integer [pk, increment]
+name varchar(255)
+email varchar(255) [unique]
+password varchar(255)
+}
+
+Table formularios{
+id integer [pk, increment]
+fecha date
+fecha_inicio date
+fecha_fin date
+descripcion varchar
+responsable_id integer [ref: > users.id]
+revision_id integer [ref: > users.id]
+estado integer
+}
+
+Table procedimientos{
+id integer [pk, increment]
+nombre_procedimiento varchar
+estado integer
+}
